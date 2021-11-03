@@ -3,6 +3,7 @@ package basics;
 import org.junit.jupiter.api.Test;
 
 public class MyFirstJavaClass {
+
     public int sumTwoDigits(int a, int b) {
 //        int someDigit = null;
 //        Integer otherDigit = null;
