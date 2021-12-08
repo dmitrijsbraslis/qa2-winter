@@ -19,9 +19,8 @@ public class ArticleTests {
         //Accept cookies
         homePage.acceptCookies();
 
-        //Get 3rd article title
-
-        //Get 3rd article comments count
+        //Get 3rd article
+        homePage.getArticleById(3);
 
         //Open 3rd article
 

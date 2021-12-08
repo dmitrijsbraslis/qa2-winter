@@ -2,11 +2,13 @@ package pageobject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BaseFunc {
     private WebDriver browser;
@@ -28,5 +30,17 @@ public class BaseFunc {
     public void click(By locator) {
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+
+    public List<WebElement> findElements(By locator) {
+        return browser.findElements(locator);
+    }
+
+    public List<WebElement> findElements(WebElement parent, By child) {
+        return parent.findElements(child);
+    }
+
+    public String getText(WebElement parent, By child) {
+
     }
 }
