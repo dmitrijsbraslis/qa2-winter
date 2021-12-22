@@ -27,23 +27,22 @@ public class HomePage {
         Assertions.assertFalse(articlesElements.isEmpty(), "There are no articles!");
 
         WebElement currentArticle = articlesElements.get(articleNr - 1);
-        mapArticle(currentArticle);
+        return mapArticle(currentArticle);
     }
 
     // WebElement -> Article
     private Article mapArticle(WebElement we) {
         Article article = new Article();
 
-        //if there is no element with comments count -> commentsCount = 0
-        //else we are getting webElement with comments count, parse to int and store it
-        if (baseFunc.findElements(we, COMMENTS_COUNT).isEmpty()) {
+        List<WebElement> counters = baseFunc.findElements(we, COMMENTS_COUNT);
+        Assertions.assertTrue(counters.size() < 2, "There is more than 1 counter!");
+
+        if (counters.isEmpty()) {
             article.setCommentsCount(0);
         } else {
-            baseFunc.findElements(we, COMMENTS_COUNT).get(0).getText();
+//            WebElement counter = counters.get(0); // -> (36) :: WebElement
+            article.setCommentsCount(counters.get(0));
         }
-
-        article.setCommentsCount();
-        article.setTitle();
 
         return article;
     }
