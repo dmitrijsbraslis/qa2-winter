@@ -1,7 +1,5 @@
 package model;
 
-import com.sun.org.apache.xpath.internal.operations.String;
-
 public class Weather {
     private long id;
     private String main;
