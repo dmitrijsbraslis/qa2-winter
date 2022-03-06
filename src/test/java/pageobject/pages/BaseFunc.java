@@ -66,4 +66,8 @@ public class BaseFunc {
     public void type(By locator, int text) {
         type(locator, String.valueOf(text));
     }
+
+    public void waitUntilElementsCountAtLeast(By locator, int count) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, count));
+    }
 }
