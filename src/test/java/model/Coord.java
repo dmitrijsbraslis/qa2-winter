@@ -3,6 +3,7 @@ package model;
 public class Coord {
     private double lon;
     private double lat;
+    private String serjoga = "molodec";
 
     public double getLon() {
         return lon;
